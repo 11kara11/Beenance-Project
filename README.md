@@ -12,3 +12,4 @@
 Бета версия подразумевает 5 валют(BTC, USD, ETH, RUB, EUR)
 
 #Design
+![Beenance UIbeta](https://user-images.githubusercontent.com/110305715/193298248-3a4b0dcc-06ca-43cf-b3bf-13289775ea7b.jpg)
