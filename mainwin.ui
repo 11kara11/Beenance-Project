@@ -137,15 +137,15 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>50</x>
       <y>140</y>
-      <width>241</width>
+      <width>301</width>
       <height>651</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="usd_btn">
        <property name="font">
         <font>
          <family>Modern No. 20</family>
@@ -160,12 +160,12 @@ border-radius:10px;
 border-color:yellow</string>
        </property>
        <property name="text">
-        <string>btc</string>
+        <string>USD</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="euro_btn">
        <property name="font">
         <font>
          <family>Modern No. 20</family>
@@ -180,12 +180,12 @@ border-radius:10px;
 border-color:yellow</string>
        </property>
        <property name="text">
-        <string>eth</string>
+        <string>EURO</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="pound_btn">
        <property name="font">
         <font>
          <family>Modern No. 20</family>
@@ -200,12 +200,12 @@ border-radius:10px;
 border-color:yellow</string>
        </property>
        <property name="text">
-        <string>euro</string>
+        <string>Pound UK</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="tenge_btn">
        <property name="font">
         <font>
          <family>Modern No. 20</family>
@@ -220,7 +220,7 @@ border-radius:10px;
 border-color:yellow</string>
        </property>
        <property name="text">
-        <string>rub</string>
+        <string>Kz tenge</string>
        </property>
       </widget>
      </item>
@@ -229,7 +229,7 @@ border-color:yellow</string>
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>360</x>
       <y>140</y>
       <width>251</width>
       <height>651</height>
@@ -237,7 +237,7 @@ border-color:yellow</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="usd_line">
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -251,12 +251,12 @@ border-radius:10px;
 border-color:white;</string>
        </property>
        <property name="text">
-        <string>10000000$</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="euro_line">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -281,7 +281,7 @@ border-color:white;</string>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="pound_line">
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -297,7 +297,7 @@ border-color:white;</string>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="tenge_line">
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -317,8 +317,8 @@ border-color:white;</string>
    <widget class="QLineEdit" name="Today">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>220</y>
+      <x>670</x>
+      <y>190</y>
       <width>291</width>
       <height>141</height>
      </rect>

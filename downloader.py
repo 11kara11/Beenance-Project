@@ -1,56 +1,55 @@
-# importing the requests library
 import requests
-def download(codevalue, value_change_step, to):
-    #codevalue = "USDRUB"
-    from_date = "4.10.2010"
-    #to = "10.10.2022"
-    #value_change_step = "10"
+import xml.etree.ElementTree as ET
+import os
+from datetime import date
 
-    # получение данных из чисел
-    df = from_date.split(".")[0]
-    mf = str(int(from_date.split(".")[1])-1)
-    yf = from_date.split(".")[2]
-
-    dt = to.split(".")[0]
-    mt = str(int(to.split(".")[1])-1)
-    yt = to.split(".")[2]
+"""
 
 
-    print(f"{df}, {mf}, {yf}")
-    print(f"{dt}, {mt}, {yt}")
-    """
-    
-    value_change_step важная переменная, от неё зависит шаг изменения валюты в файл
-    1 - тик
-    2 - 1 мин
-    3 - 5 мин
-    4 - 10 мин
-    5 - 15 мин
-    6 - 30 мин
-    7 - 1 час
-    8 - 1 день
-    9 - 1 неделя
-    10 - 1 месяц
-    
-    to переменная отвечает за дату <<до какого периода>>
-    from_date переменная отвечает за дату <<с чего начать>>
-    
-    codewalue переменная, которая отвечает за сами валюты, относительно кого (например <<USDRUB>>, или <<RUBEUR>>)
-    
-    
-    
-    после 4 запятой и между 5 запятой и есть сам курс числа за нужный период времени
-    """
+Всё относительно в российских рублях
 
-    # api-endpoint
-    URL = f"https://export.finam.ru/export9.out?market=5&em=901&token=03AIIukzgFeP2OY8aYJVZwgJdbmel4oU-92-Fn6F-MVxfiWotcIUlmQiAVKFCsk9AWxUXkZxTCC744hd0GHmdbFycGpqAoFWptkeqOUnNHECkntaMNdLG6cJRwG7tgoqQgdFU4o3YIfsPlirYNzTyZnsjI02Y_rJjeNaLHwnCvPJRxbL7U8HMpTfbChiCZFu-J5GjQW5v6yal-VudobN4XnhnuNUUFr_dP5DPeW4aCwLHqLGuWBCRlxMM1MSDUwkGfHaHzLZxd1Xsr3-9jT8j-RBc_JLwW0CVrREl-ZZq41qYSlFwGF9zWMk_pizzTL8Is_wrtZsm6S2dRyglwwyLfAQVF6AyIvO0JiUBPkoO-lx-g4NO2ij3YQM19JSEkALh6r786cPW-0FnF9I2eETmcopaWBzfmYyWOz8Mj4vpOR-BzHhIRLna9NPepjlNpgyLxdUn_nZcPFnkLku0r9WJZC1cuRo1tccISz_epmPiqBWfX58xJ4KQrbpITf32Anw_DpPS8fJp1e3Ze&code={codevalue}&apply=0&df={df}&mf={mf}&yf={yf}&from={from_date}&dt={dt}&mt={mt}&yt={yt}&to={to}&p={value_change_step}&f=file_kotirofka&e=.txt&cn={codevalue}&dtf=1&tmf=1&MSOR=1&mstime=on&mstimever=1&sep=1&sep2=1&datf=1&at=1"
+Ниже переменные типо date_from (от какой даты), date_to (до какой даты), value_code (код валюты: https://cbr.ru/scripts/XML_val.asp?d=0)
+А так же code_dictionary, пополнять его для опознания валюты
 
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' }
-    # sending get request and saving the response as response object
-    r = requests.get(url=URL, headers=headers)
-    print(r)
+CBR даёт данные только в днях :|
+"""
+class download():
+    def __init__(self):
+        self.code_dictionary = {"R01239": "euro.txt",
+                                "R01235": "usd.txt",
+                                'R01035': 'pound.txt',
+                                'R01335': 'tenge.txt'}
+    def downloader(self, date_to, value_code, file_currency):
+        date_from = "02/03/2001"
 
-    with open('test.txt', 'wb') as f:
-        f.write(r.content)
 
-download("USDRUB", '10', '13.10.2022')
+        URL = f"https://cbr.ru/scripts/XML_dynamic.asp?date_req1={date_from}&date_req2={date_to}&VAL_NM_RQ={value_code}"
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'}
+        r = requests.get(url=URL, headers=headers)
+
+        root = ET.Element('info')
+
+
+        with open('info.xml', 'wb') as f:
+            f.write(r.content) # сам xml файл
+
+        root_node = ET.parse('info.xml').getroot()
+
+        with open(f'currency\{file_currency}', 'w') as d:
+            for tag in root_node.findall('Record'):
+                d.write(f"{self.code_dictionary[tag.attrib['Id']]}|{list(tag)[1].text}|{tag.attrib['Date']}\n") # сначала валюта, потом цена, и после уже дата
+        os.remove('D:\Beenance-Project\info.xml')
+
+    def download_currency(self):
+        for i in range(4):
+            value_code, file_currency = list(self.code_dictionary.items())[i]
+            year, month, day = str(date.today()).split('-')
+            date_to = '/'.join([day, month, year])
+            print(date_to)
+
+            self.downloader(date_to, value_code, file_currency)
+
+
+
+
