@@ -46,7 +46,6 @@ class download():
             value_code, file_currency = list(self.code_dictionary.items())[i]
             year, month, day = str(date.today()).split('-')
             date_to = '/'.join([day, month, year])
-            print(date_to)
 
             self.downloader(date_to, value_code, file_currency)
 

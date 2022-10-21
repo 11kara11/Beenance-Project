@@ -9,9 +9,10 @@ from PyQt5.QtWidgets import (
 from DateBase import DateBase
 from downloader import download
 
-download = download
+download_ = download()
 date_now = date.today()
 database = DateBase()
+download_.download_currency()
 class Beenance(QMainWindow):   # главный класс с интерфейсом и простыми функциями
     def __init__(self):
         super().__init__()
@@ -21,6 +22,7 @@ class Beenance(QMainWindow):   # главный класс с интерфейс
     def initUI(self):
         self.Today.setText(f'  {date_now}')
         self.set_text()
+        #self.centralwidget.hide()
     def set_text(self):
         for i in ['euro.txt', 'pound.txt', 'tenge.txt', 'usd.txt']:
             database.read_quotes(i)
