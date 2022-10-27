@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>837</height>
+    <width>845</width>
+    <height>667</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,8 +21,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>759</width>
-    <height>610</height>
+    <width>500</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -62,7 +62,7 @@
       <x>-10</x>
       <y>-10</y>
       <width>1101</width>
-      <height>171</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -72,7 +72,7 @@
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.534227, y1:0.761, x2:0.534318, y2:0.550818, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 0, 255))</string>
+     <string notr="true">background-color: rgb(0, 255, 255)</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -83,7 +83,7 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>250</x>
        <y>40</y>
        <width>759</width>
        <height>71</height>
@@ -111,36 +111,14 @@
       <string>Beenance</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>670</x>
-       <y>50</y>
-       <width>31</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>C:/Users/фвьшт/OneDrive/Рабочий стол/cat2.png</pixmap>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>140</y>
-      <width>301</width>
-      <height>651</height>
+      <x>30</x>
+      <y>120</y>
+      <width>251</width>
+      <height>541</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -152,15 +130,27 @@
          <pointsize>20</pointsize>
         </font>
        </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);
-border: 2px solid;
-border-style:outset;
-border-radius:10px;
-border-color:yellow</string>
+        <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	border: 2px solid;
+	border-style:outset;
+	border-radius:10px;
+	border-color:rgb(0, 255, 255)
+}
+
+QPushButton:hover{
+    background-color:rgb(128, 128, 128);
+}</string>
        </property>
        <property name="text">
         <string>USD</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -173,11 +163,17 @@ border-color:yellow</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);
-border: 2px solid;
-border-style:outset;
-border-radius:10px;
-border-color:yellow</string>
+        <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	border: 2px solid;
+	border-style:outset;
+	border-radius:10px;
+	border-color:rgb(0, 255, 255)
+}
+
+QPushButton:hover{
+    background-color:rgb(128, 128, 128);
+}</string>
        </property>
        <property name="text">
         <string>EURO</string>
@@ -193,11 +189,17 @@ border-color:yellow</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);
-border: 2px solid;
-border-style:outset;
-border-radius:10px;
-border-color:yellow</string>
+        <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	border: 2px solid;
+	border-style:outset;
+	border-radius:10px;
+	border-color:rgb(0, 255, 255)
+}
+
+QPushButton:hover{
+    background-color:rgb(128, 128, 128);
+}</string>
        </property>
        <property name="text">
         <string>Pound UK</string>
@@ -213,11 +215,17 @@ border-color:yellow</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);
-border: 2px solid;
-border-style:outset;
-border-radius:10px;
-border-color:yellow</string>
+        <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	border: 2px solid;
+	border-style:outset;
+	border-radius:10px;
+	border-color:rgb(0, 255, 255)
+}
+
+QPushButton:hover{
+    background-color:rgb(128, 128, 128);
+}</string>
        </property>
        <property name="text">
         <string>Kz tenge</string>
@@ -229,10 +237,10 @@ border-color:yellow</string>
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>140</y>
-      <width>251</width>
-      <height>651</height>
+      <x>300</x>
+      <y>120</y>
+      <width>231</width>
+      <height>541</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -252,6 +260,9 @@ border-color:white;</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -278,6 +289,9 @@ border-style:outset;
 border-radius:10px;
 border-color:white;</string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -293,6 +307,9 @@ border: 2px solid;
 border-style:outset;
 border-radius:10px;
 border-color:white;</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -310,6 +327,9 @@ border-style:outset;
 border-radius:10px;
 border-color:white;</string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
     </layout>
@@ -317,10 +337,10 @@ border-color:white;</string>
    <widget class="QLineEdit" name="Today">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>190</y>
-      <width>291</width>
-      <height>141</height>
+      <x>560</x>
+      <y>120</y>
+      <width>281</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -340,6 +360,9 @@ border: 2px solid;
 border-style:outset;
 border-radius:10px;
 border-color:white;</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

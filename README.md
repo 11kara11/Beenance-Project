@@ -9,5 +9,14 @@
 
 Бета версия подразумевает 4 валюты(USD TENGE POUND EUR)
 
+CBR НЕ РАБОТАЕТ НА ВЫХОДНЫХ(((
+
+# dependencies
+matplotlib.pyplot
+PyQT5
+requests
+
+version in 'requirements.txt'
+
 # Design
 ![Beenance UIbeta](https://user-images.githubusercontent.com/110305715/193298248-3a4b0dcc-06ca-43cf-b3bf-13289775ea7b.jpg)
