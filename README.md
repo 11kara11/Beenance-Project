@@ -20,4 +20,5 @@ requests
 version in 'requirements.txt'
 
 # Design
-![Beenance UIbeta](https://user-images.githubusercontent.com/110305715/193298248-3a4b0dcc-06ca-43cf-b3bf-13289775ea7b.jpg)
+![image](https://user-images.githubusercontent.com/110305715/198326043-6498c3d9-fc30-49a9-84b1-7caa62d8e7f3.png)
+
