@@ -1,11 +1,13 @@
 import matplotlib.pyplot as plt
 
-from DateBase import DateBase
+from DataBase import DataBase
 
-database = DateBase()
+database = DataBase()
 '''
 Класс с генерацией графиков с помощбю библиотеки matplotlib
 на вход к графикам поступают списки с датами/годами из DateBase
+generate_graf_alltime - генерирует график валюты за все время
+generate_graf_month - генерирует график за последние 30 дней
 '''
 
 
