@@ -108,6 +108,14 @@ class Grafic_Window(QDialog):
         self.alltime_btn.move(450, 470)
         self.alltime_btn.setText('All Time')
 
+        self.tenge_line = QLineEdit(self)
+        self.tenge_line.setText('')
+        self.tenge_line.setGeometry(350, 50, 350, 50)
+        self.tenge_line.move(200, 570)
+        self.tenge_line.setStyleSheet('color: rgb(255, 255, 255)')
+        self.tenge_line.setReadOnly(True)
+        self.tenge_line.setFrame(False)
+
         self.month_btn.setStyleSheet(
             'QPushButton{color: rgb(255, 255, 255); border: 2px solid;border-style:outset;border-radius:10px;border-color:rgb(0, 255, 255)}' \
             'QPushButton:hover{background-color:rgb(128, 128, 128);}')
@@ -125,24 +133,16 @@ class Grafic_Window(QDialog):
         print(f'images_currency\{self.file_currency.split(".")[0]}{date}.png')
         self.edit_field.setPixmap(self.pixmap)
         if self.file_currency == 'tenge.txt':
-            self.tenge_line = QLineEdit(self)
             self.tenge_line.setText('Цена за 100 единиц валюты')
-            self.tenge_line.setGeometry(350, 50, 350, 50)
-            self.tenge_line.move(200, 570)
-            self.tenge_line.setStyleSheet('color: rgb(255, 255, 255)')
-            self.tenge_line.setReadOnly(True)
-            self.tenge_line.setFrame(False)
+        else:
+            self.tenge_line.setText('')
 
     def set_picture(self, file_currency):
         self.pixmap = QPixmap(f'images_currency\{file_currency.split(".")[0]}_month.png')
         if file_currency == 'tenge.txt':
-            self.tenge_line = QLineEdit(self)
             self.tenge_line.setText('Цена за 100 единиц валюты')
-            self.tenge_line.setGeometry(350, 40, 350, 40)
-            self.tenge_line.move(200, 570)
-            self.tenge_line.setStyleSheet('color: rgb(255, 255, 255)')
-            self.tenge_line.setReadOnly(True)
-            self.tenge_line.setFrame(False)
+        else:
+            self.tenge_line.setText('')
         self.edit_field.setPixmap(self.pixmap)
 
 
