@@ -22,3 +22,6 @@ version in 'requirements.txt'
 # Design
 ![image](https://user-images.githubusercontent.com/110305715/198326043-6498c3d9-fc30-49a9-84b1-7caa62d8e7f3.png)
 
+# Installation
+скопируйте репозиторий в любую папку на вашем диске.
+главный файл программы - beenance.py (к нему подключаются остальные модули)
