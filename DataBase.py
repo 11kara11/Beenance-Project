@@ -61,7 +61,7 @@ class DataBase():  # класс базы данных, тут осуществл
                 else:
                     i = float(i.split('|')[1].replace(',', '.'))
                     temp_value.append(i)
-            if temp_year[-1] == 2022:
+            if temp_year[-1] == 2023:
                 self.mean_value.append(statistics.mean(temp_value))
         return self.mean_value, temp_year
 
@@ -83,7 +83,7 @@ class DataBase():  # класс базы данных, тут осуществл
                 if os.path.isfile(f'currency\{i}') == False:
                     download_.download_currency()
             elif os.path.exists(i) == False:
-                self.show_Error('OoOpS, someone deleted main folder/files, u need reinstall Beenance')
+                self.show_Error('OoOpS, someone deleted main folder/files, u need reinstall Beenance' + i)
                 sys.exit()
         for file_currency in self.data_list:
             with open(f'currency\{file_currency}', 'r') as fout:
